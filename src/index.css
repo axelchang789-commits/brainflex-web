@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-scale: 1;
+    --primary-earth: #2D5A27;
+    --bg-warm: #FAF8F5;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #2D3748;
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Font size scale presets for Senior Friendly UI */
+  .font-size-standard {
+    font-size: 17px;
+  }
+  .font-size-large {
+    font-size: 20px;
+  }
+  .font-size-extra-large {
+    font-size: 23px;
+  }
+
+  /* Custom smooth scrolling and scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F1ECE4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C4B9A7;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A39682;
+  }
+}
+
+/* Animations */
+@keyframes coin-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.1); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-coin {
+  animation: coin-bounce 1.5s infinite ease-in-out;
+}
+
+.animate-gentle {
+  animation: pulse-gentle 2s infinite ease-in-out;
+}
+
